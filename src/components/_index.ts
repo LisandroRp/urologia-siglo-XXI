@@ -1,0 +1,12 @@
+export { Icon } from "./Icon";
+export { Header } from "./Header";
+export { Spinner } from "./Spinner";
+export { Section } from "./Section";
+export { InfoSection } from "./InfoSection";
+export { ContactSection } from "./ContactSection";
+export { WhatsAppButton } from "./WhatsAppButton";
+export { ImagesCarousel } from "./ImagesCarousel";
+export { Clinics } from "./ContactSection/Clinics";
+export { ImageTextModule } from "./ImageTextModule";
+export { DiseasesCarousel } from "./Carousels/DiseasesCarousel";
+export { TreatmentsCarousel } from "./Carousels/TreatmentsCarousel";

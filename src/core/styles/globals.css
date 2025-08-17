@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "./carousel.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.animate-typing {
+  animation: typing 2s steps(20, end) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 20ch;
+    border-right: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .animate-typing-mobile {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid white;
+    animation: typing-mobile 1.2s steps(20, end) forwards;
+  }
+
+  .animate-typing-mobile-delay {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid white;
+    opacity: 0;
+    animation: typing-mobile 1.2s steps(20, end) forwards;
+    animation-delay: 1.3s;
+    animation-fill-mode: forwards;
+    /* para que quede visible al terminar */
+  }
+}
+
+@keyframes typing-mobile {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+
+  to {
+    width: 10ch;
+    opacity: 1;
+    border-right: none;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fade-in 700ms ease forwards;
+    animation-delay: 2s;
+  }
+
+  @media (max-width: 575px) {
+    .fade-in {
+      opacity: 0;
+      animation: fade-in 700ms ease forwards;
+      animation-delay: 2.5s;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
+
+#header {
+  transition: transform 0.3s ease-in-out;
+}

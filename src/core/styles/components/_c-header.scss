@@ -1,0 +1,167 @@
+.c-header {
+  background: $white;
+  box-shadow: 0 2px 13px 0 rgb(0 0 0 / 10%);
+  height: $header-height;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+
+  &__container {
+    max-width: 940px;
+    padding: 0 15px;
+  }
+
+  &__logo {
+    display: block;
+    left: 70px;
+    margin: 0 0 0 -55px;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 90%;
+
+    @include responsive(md) {
+      margin: unset;
+    }
+
+    @include responsive(lg) {
+      left: unset;
+      margin: unset;
+      max-width: 120px;
+      top: 1px;
+      width: unset;
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    float: right;
+    margin-left: 45px;
+    overflow: hidden;
+    padding: 25px 0;
+    position: relative;
+    width: 35px;
+    z-index: 1;
+  }
+
+  &__toggle-line {
+    background: black;
+    border-radius: 12px;
+    display: block;
+    height: 2px;
+    margin: 2px 0;
+    transition: 0.3s;
+    width: 75%;
+
+    &--open {
+      &:nth-child(1) {
+        margin-top: 10px;
+        transform: rotate(48deg);
+        width: 30px;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        margin-top: -10px;
+        transform: rotate(-45deg);
+        width: 30px;
+      }
+    }
+  }
+
+  &__toggle-line--web {
+    background: white;
+    border-radius: 12px;
+    display: block;
+    height: 2px;
+    margin: 2px 0;
+    transition: 0.3s;
+    width: 75%;
+
+    &--open {
+      &:nth-child(1) {
+        margin-top: 10px;
+        transform: rotate(48deg);
+        width: 30px;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        margin-top: -10px;
+        transform: rotate(-45deg);
+        width: 30px;
+      }
+    }
+  }
+
+  &__nav {
+    background-color: $white;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: $header-height;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.7s ease, opacity 0.3s ease;
+    z-index: -1;
+
+    @include responsive(xl) {
+      background-color: unset;
+      left: unset;
+      margin-right: -2px;
+      opacity: 1;
+      position: relative;
+      top: unset;
+      transform: unset;
+      transition: unset;
+      z-index: unset;
+    }
+
+    &--open {
+      opacity: 1;
+      transform: scaleY(1);
+      transition: transform 0.3s ease, opacity 0.7s ease;
+      z-index: 1;
+    }
+  }
+
+  &__link {
+    border-bottom: solid 1px $grey-500;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.75rem;
+    padding: 1rem;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+
+    @include responsive(lg) {
+      border: none;
+      line-height: 1.5;
+      padding: 10px 0;
+      text-align: center;
+      width: unset;
+    }
+
+    &--highlight {
+      border-radius: 0;
+      font-size: 14.4px;
+      // text-transform: uppercase;
+
+      @include responsive(lg) {
+        border-radius: 43px;
+        font-size: 14px;
+        height: 30px;
+        min-width: 108px;
+        padding: 5px;
+        text-align: center;
+        text-transform: none;
+      }
+    }
+  }
+}

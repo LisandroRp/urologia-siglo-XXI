@@ -1,0 +1,70 @@
+/* Paginado que vuelve al principio */
+/* @keyframes carousel {
+
+  0%,
+  20% {
+    transform: translateX(0%);
+  }
+
+  25%,
+  45% {
+    transform: translateX(-100%);
+  }
+
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+
+  75%,
+  100% {
+    transform: translateX(-300%);
+  }
+} */
+
+@keyframes carousel {
+
+  0%,
+  10% {
+    transform: translateX(0%);
+  }
+
+  15%,
+  30% {
+    transform: translateX(-100%);
+  }
+
+  35%,
+  50% {
+    transform: translateX(-200%);
+  }
+
+  55%,
+  80% {
+    transform: translateX(-300%);
+  }
+
+  85%,
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 12s infinite ease-in-out;
+}
+
+/* paginado infinito sin parar */
+/* @keyframes carousel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-300%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 22s linear infinite;
+} */

@@ -1,0 +1,114 @@
+// The settings.scss file contains all the scss variables such as colors, breakpoint, font sizes, etc.
+:root {
+  --black: #000;
+  --matte-black: #1F1F1F;
+  --grey-900: #454545;
+  --grey-700: #979797;
+  --grey-500: #CDCDCD;
+  --grey-300: #E2E2E2;
+  --grey-100: #F3F3F3;
+  --white: #fff;
+  --green: #64df61;
+  --blue: #008AE9;
+  --red: #FF453A;
+  --fanbase: #9829FF;
+  --purple: #7A00C3;
+  --mentions: #4d6780;
+  --pink: #DF3D74;
+  // heights
+  --header-height: 4rem;
+  --flickz-header-height: 4.75rem;
+
+  //migration
+  --primaryColor: #FF0067;
+  --lightgray: #eee;
+  --gray: #999;
+  --textColor: #222;
+  --background: #f5f5f5;
+  --contrastBackground: #fff;
+}
+
+// colors
+$black: #000;
+$matte-black: #1F1F1F;
+$grey-900: #454545;
+$grey-700: #979797;
+$grey-500: #CDCDCD;
+$grey-300: #E2E2E2;
+$grey-100: #F3F3F3;
+$white: #fff;
+$green: #64df61;
+$blue: #008AE9;
+$red: #FF453A;
+$fanbase: #9829FF;
+$purple: #7A00C3;
+$mentions: #4d6780;
+$pink: #FF2C6A;
+// $pink: #DF3D74;
+$transparent: transparent;
+$public-gradient: linear-gradient(172deg, #75FF72, #4FAB4D);
+$social-gradient: linear-gradient(172deg, #00BFFF, #1F1FFF);
+$fanbase-gradient: linear-gradient(172deg, #2B0458, #7F1AC8, #871951);
+// $fanbase-gradient: linear-gradient(172deg, #360060, #9829FF, #FF00D6);
+$exclusive-gradient: linear-gradient(0.06turn, #FF00D6, #FF453A, #FFA624);
+$branded-gradient: linear-gradient(0.06turn, #FF002E, #FF00D6, #7000FF);
+
+// heights
+// $header-height: 4rem; // new header
+$header-height: 65px;
+$header-height-x2: 65px + 64px;
+$flickz-header-height: 65px;
+
+$colors: (
+  'black': #000,
+  'matte-black': #1F1F1F,
+  'grey-900': #454545,
+  'grey-700': #979797,
+  'grey-500': #CDCDCD,
+  'grey-300': #E2E2E2,
+  'grey-100': #F3F3F3,
+  'white': #fff,
+  'green': #64df61,
+  'blue': #008AE9,
+  'red': #FF453A,
+  'fanbase': #9829FF,
+  'purple':#7A00C3,
+  'mentions': #4d6780,
+  'pink': #FF2C6A,
+  // 'pink': #DF3D74,
+  'transparent': transparent,
+  'public-gradient': linear-gradient(172deg, #75FF72, #4FAB4D),
+  'social-gradient': linear-gradient(172deg, #00BFFF, #1F1FFF),
+  'fanbase-gradient': linear-gradient(172deg, #2B0458, #7F1AC8, #871951),
+  // 'fanbase-gradient': linear-gradient(172deg, #360060, #9829FF, #FF00D6),
+  'exclusive-gradient': linear-gradient(0.06turn, #FF00D6, #FF453A, #FFA624),
+  'branded-gradient': linear-gradient(0.06turn, #FF002E, #FF00D6, #7000FF),
+);
+
+$breakpoints: (
+  xxs: 0,
+  xs: 330px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$portrait: "portrait";
+$landscape: "landscape";
+
+//migration
+$primaryColor : var(--primaryColor);
+$lightgray : var(--lightgray);
+$textColor : var(--textColor);
+$gray : var(--gray);
+$background : var(--background);
+$backgroundContrast : var(--contrastBackground);
+// Dimensions
+
+$goldenPadding: 16px;
+
+// Shadows
+
+$shadow: 0 4px 8px rgb(0, 0, 0, 15%);

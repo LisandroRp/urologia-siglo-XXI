@@ -1,6 +1,19 @@
 import { images as covers } from "@/core/theme/images";
+import { StaticImageData } from "next/image";
 
-export const urologia = {
+export type InfoItem = {
+  title: string;
+  subtitle: string;
+  description: string;
+  images: StaticImageData[];
+  button?: {
+    title: string;
+    onClick: string;
+  };
+  highlights?: string[];
+};
+
+export const urologia: InfoItem = {
   title: "Urología Siglo XXI",
   subtitle: "Diagnóstico y tratamiento integral — Canning y Cañuelas",
   description:

@@ -2,18 +2,19 @@ import Image from "next/image";
 import classNames from "classnames";
 import { norberto } from './Norberto';
 import { urologia } from "./Urologia";
-import FadeImageCarousel from "./FadeCarousel";
-import { images } from '../../core/theme/images';
+import FadeImageCarousel from "./FadeCarousel";;
 import Description from './Description';
 
 interface InfoSectionProps {
-  type: string;
+  type: InfoKey;
   reverse?: boolean;
 }
 
+const info = { norberto, urologia }
+type InfoKey = keyof typeof info;
+
 export const InfoSection = ({ type, reverse = false }: InfoSectionProps) => {
 
-  const info = { norberto, urologia }
   const slug = info[type]
   const containerClassNames = classNames({
     "flex-col lg:flex-row": !reverse,

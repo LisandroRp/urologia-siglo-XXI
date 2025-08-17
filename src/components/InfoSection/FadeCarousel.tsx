@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
-  images: string[];          // rutas o imports
+  images: StaticImageData[];          // rutas o imports
   intervalMs?: number;       // default 5s
   showArrows?: boolean;      // default true
   showDots?: boolean;        // default true
@@ -29,9 +29,13 @@ export default function FadeImageCarousel({
   const goTo = (n: number) => setIdx(n);
 
   useEffect(() => {
-    if (paused || list.length <= 1) return
+    if (paused || list.length <= 1) return;
     timer.current = setInterval(() => go(1), intervalMs);
-    return () => timer.current && clearInterval(timer.current);
+    return () => {
+      if (timer.current) {
+        clearInterval(timer.current);
+      }
+    };
   }, [paused, intervalMs, list.length]);
 
   if (!list?.length) return null;
@@ -47,7 +51,7 @@ export default function FadeImageCarousel({
       <div className={`relative w-full aspect-[16/9] ${list.length > 1 ? "h-[90%]" : "h-full"}`}>
         {list.map((src, i) => (
           <div
-            key={src + i}
+            key={`${src}${i}`}
             className={`absolute inset-0 transition-opacity hover:shadow-md duration-700 ease-in-out ${i === idx ? "opacity-100" : "opacity-0"
               }`}
           >

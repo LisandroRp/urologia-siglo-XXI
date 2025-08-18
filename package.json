@@ -6,7 +6,8 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build && next export -o docs"
+    "build": "next build",
+    "export": "next export -o docs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

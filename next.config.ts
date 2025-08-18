@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: 'export',          // exporta como estático
   images: {
-    unoptimized: true,
+    unoptimized: true,       // desactiva optimización de imágenes
   },
+  basePath: '/urologia-siglo-XXI', // 👈 nombre del repo
+  assetPrefix: '/urologia-siglo-XXI/', // 👈 prefijo de assets
 };
 
-export default nextConfig;
+module.exports = nextConfig;

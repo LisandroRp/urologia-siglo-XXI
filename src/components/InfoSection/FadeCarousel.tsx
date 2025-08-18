@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
-  images: StaticImageData[];          // rutas o imports
+  images: string[];          // rutas o imports
   intervalMs?: number;       // default 5s
   showArrows?: boolean;      // default true
   showDots?: boolean;        // default true
@@ -10,7 +10,7 @@ type Props = {
   imgAlt?: string;           // alt genérico
 };
 
-type ImgSrc = string | StaticImageData;
+type ImgSrc = string;
 
 export default function FadeImageCarousel({
   images,
@@ -55,12 +55,12 @@ export default function FadeImageCarousel({
             className={`absolute inset-0 transition-opacity hover:shadow-md duration-700 ease-in-out ${i === idx ? "opacity-100" : "opacity-0"
               }`}
           >
-            <Image
+            <img
               src={src}
               alt={imgAlt}
-              fill
+              // fill
               className="object-cover rounded-3xl"
-              priority={i === 0}
+              // priority={i === 0}
               sizes="100vw"
             />
           </div>

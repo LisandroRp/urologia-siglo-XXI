@@ -5,7 +5,7 @@ export type InfoItem = {
   title: string;
   subtitle: string;
   description: string;
-  images: StaticImageData[];
+  images: string[];
   button: {
     title: string;
     onClick: string;

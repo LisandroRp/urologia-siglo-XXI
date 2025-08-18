@@ -76,7 +76,7 @@ export function Header({ fixed, modalHeader, isHidingDownloadHeader }: HeaderPro
     >
       <div className="w-full mx-auto px-4 sm:px-10 xl:px-20 flex items-center justify-between h-[65px]">
         <div className="text-lg h-full font-bold cursor-pointer p-2" onClick={scrollToTop}>
-          <Image className="w-full h-full" src={images.logo} alt={"Urologia Siglo XXI"} />
+          <img className="w-full h-full" src={images.logo} alt={"Urologia Siglo XXI"} />
         </div>
         <div className="flex gap-2 items-center xl:hidden">
           <div

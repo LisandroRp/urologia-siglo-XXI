@@ -7,7 +7,7 @@ import Image, { StaticImageData } from "next/image";
 interface ImageTextModuleProps {
   className?: string;
   children: JSX.Element;
-  srcImages?: StaticImageData[];
+  srcImages?: string[];
   direction?: "row" | "column"
   reverse?: boolean;
   maxImageWidth?: string;
@@ -44,7 +44,7 @@ export function ImageTextModule({ children, srcImages, className, maxImageWidth,
     "lg:max-w-1/2 md:p-10": isVideo === true,
   })
 
-  function idsGenerator(array: StaticImageData[]) {
+  function idsGenerator(array: string[]) {
     return array.map((item, index) => ({ id: index + 1, src: item }));
   }
 
@@ -57,7 +57,7 @@ export function ImageTextModule({ children, srcImages, className, maxImageWidth,
       >
         {srcImages?.length ?
           srcImages?.length == 1 ?
-            <Image
+            <img
               alt={alt ? alt : "Image"}
               className="h-full w-full object-contain"
               src={srcImages[0]}

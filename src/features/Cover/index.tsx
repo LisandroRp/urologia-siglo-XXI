@@ -7,7 +7,7 @@ import { breakpoints } from "@/core/helpers/responsiveBreakpoints";
 export const Cover = () => {
   const { width } = useWindowSize();
   const photos = [images.green1, images.rezum, images.toscas2, images.toscas3]
-  function idsGenerator(array: StaticImageData[]) {
+  function idsGenerator(array: string[]) {
     return array.map((item, index) => ({ id: index + 1, src: item }));
   }
   const titleClassNames = "transition-all text-5xl md:text-6xl font-bold uppercase whitespace-nowrap overflow-hidden border-r-4 border-white"

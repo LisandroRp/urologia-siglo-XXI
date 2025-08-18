@@ -1,11 +1,11 @@
 import { useWindowSize } from "@hooks";
 import classNames from "classnames";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface ImagesCarouselProps {
   images: {
     id: number;
-    src: StaticImageData;
+    src: string;
   }[]
 }
 
@@ -31,11 +31,11 @@ export const ImagesCarousel = ({ images }: ImagesCarouselProps) => {
               className="h-full"
               style={{ width: `${100 / totalImages}%` }}
             >
-              <Image
+              <img
                 alt="banner"
                 src={image.src}
                 className={imageClassName}
-                priority={index === 0}
+              // priority={index === 0}
               />
             </div>
           ))}

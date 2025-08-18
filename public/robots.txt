@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://urologia-siglo-xxi.vercel.app/sitemap.xml

@@ -106,7 +106,7 @@ function highlightNodes(text: string, keys: string[]) {
   return parts.map((part, i) =>
     keys.some(k => part.toLowerCase() === k.toLowerCase()) ? (
       <mark key={i} className="rounded bg-transparent px-1 text-slate-900 font-semibold">
-        {part}
+        <strong>{part}</strong>
       </mark>
     ) : (
       <Fragment key={i}>{part}</Fragment>

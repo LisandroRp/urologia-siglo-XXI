@@ -42,48 +42,49 @@ export default function FadeImageCarousel({
 
   const arrowsClassNames = "bg-white w-8 h-8 rounded-full cursor-pointer shadow-md hover:opacity-50"
   return (
-    <div
-      className={`h-full rounded-3xl relative overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      {/* contenedor con relación de aspecto */}
-      <div className={`relative w-full aspect-[16/9] ${list.length > 1 ? "h-[90%]" : "h-full"}`}>
-        {list.map((src, i) => (
-          <div
-            key={`${src}${i}`}
-            className={`absolute inset-0 transition-opacity hover:shadow-md duration-700 ease-in-out ${i === idx ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <img
-              src={src}
-              alt={imgAlt}
-              // fill
-              className="object-cover rounded-3xl absolute inset-0 w-full h-full"
-              // priority={i === 0}
-              sizes="100vw"
-            />
-          </div>
-        ))}
-        {/* dots */}
-        {showDots && list.length > 1 && (
-          <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-            {list.map((_, i) => (
-              <button
-                key={i}
-                aria-label={`Ir al ${i + 1}`}
-                onClick={() => goTo(i)}
-                className={`h-2.5 w-2.5 rounded-full transition ${i === idx ? "bg-zinc-900" : "bg-zinc-300 hover:bg-zinc-400"
-                  }`}
+    <div className="flex flex-1 flex-col justify-center w-full lg:w-1/2">
+      <div
+        className={`h-full rounded-3xl relative overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        {/* contenedor con relación de aspecto */}
+        <div className={`relative w-full aspect-[16/9] h-full`}>
+          {list.map((src, i) => (
+            <div
+              key={`${src}${i}`}
+              className={`absolute inset-0 transition-opacity hover:shadow-md duration-700 ease-in-out ${i === idx ? "opacity-100" : "opacity-0"
+                }`}
+            >
+              <img
+                src={src}
+                alt={imgAlt}
+                // fill
+                className="object-cover rounded-3xl absolute inset-0 w-full h-full"
+                // priority={i === 0}
+                sizes="100vw"
               />
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+          {/* dots */}
+          {showDots && list.length > 1 && (
+            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+              {list.map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`Ir al ${i + 1}`}
+                  onClick={() => goTo(i)}
+                  className={`h-2.5 w-2.5 rounded-full transition ${i === idx ? "bg-zinc-900" : "bg-zinc-300 hover:bg-zinc-400"
+                    }`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-
       {/* flechas */}
       {showArrows && list.length > 1 && (
-        <div className="flex justify-center items-center h-[10%] gap-5 text-black">
+        <div className="flex shrink-0 justify-center items-center h-[10%] gap-5 text-black my-4 md:my-1">
           <button
             aria-label="Anterior"
             onClick={() => go(-1)}

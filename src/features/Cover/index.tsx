@@ -12,12 +12,12 @@ export const Cover = () => {
   }
   const titleClassNames = "transition-all text-5xl md:text-6xl font-bold uppercase whitespace-nowrap overflow-hidden"
   return (
-    <div className="h-[calc(100vh-65px)] mt-[65px] overflow-hidden bg-blue-50">
+    <div className="relative h-[calc(100vh-65px)] mt-[65px] overflow-hidden bg-blue-50">
       <ImagesCarousel images={idsGenerator([...photos, ...photos])} />
       {/* Fondo negro con opacidad */}
       <div className="absolute inset-0 bg-black opacity-[66%] z-10" />
       {/* Texto centrado */}
-      <div className="absolute flex flex-col inset-0 items-center justify-center z-20 text-center gap-5 text-blue-50">
+      <div className="absolute flex flex-col h-full inset-0 items-center justify-center z-20 text-center gap-5 text-blue-50">
         <div className="flex-col sm:flex-row ">
           <h1 className={titleClassNames}>
             {width && width >= breakpoints.sm

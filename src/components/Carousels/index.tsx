@@ -46,13 +46,13 @@ export const Carousel = ({ title, items, description, classNames }: CarouselProp
     }
   }, [width]);
 
-  useEffect(() => {
-    if (isLargeScreen) return;
+  // useEffect(() => {
+  //   if (isLargeScreen) return;
 
-    const interval = setInterval(handleNext, 2500); // 3 segundos
+  //   const interval = setInterval(handleNext, 2500); // 3 segundos
 
-    return () => clearInterval(interval);
-  }, [index, isLargeScreen]);
+  //   return () => clearInterval(interval);
+  // }, [index, isLargeScreen]);
 
   return (
     <div
@@ -82,12 +82,12 @@ export const Carousel = ({ title, items, description, classNames }: CarouselProp
 
             <div
               ref={carouselRef}
-              className="md:pl-10 flex items-center gap-10 overflow-x-hidden scroll-smooth snap-x snap-mandatory h-full lg:h-[80%] w-full"
+              className="flex items-center gap-10 md:gap-0 overflow-x-hidden scroll-smooth snap-x snap-mandatory h-full lg:h-[80%] w-full"
             >
               {items.map((item) => (
                 <div
                   key={item.id}
-                  className="pl-[10%] md:pl-0 h-full w-[90%] md:w-[50%] snap-start shrink-0 px-2"
+                  className="not-last:pl-[12%] last:pr-[11%] md:not-last:pl-0 md:last:pr-0 h-full w-[90%] md:w-[50%] snap-start shrink-0 px-2"
                 >
                   <CarouselItem {...item} />
                 </div>

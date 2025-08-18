@@ -28,6 +28,7 @@ export const WhatsAppButton = () => {
       href={buildWhatsAppLink(number)}
       target="_blank"
       rel="noopener noreferrer"
+      title={`Enviar un Whats App a ${shortName}`}
       className="flex items-center gap-3 border border-green-500 rounded-lg p-3 hover:bg-green-50 transition-colors duration-200"
     >
       <FaWhatsapp className="text-green-500 text-xl" />

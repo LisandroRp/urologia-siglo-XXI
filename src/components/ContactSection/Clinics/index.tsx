@@ -79,6 +79,7 @@ export const Clinics = () => {
           href="https://ar.linkedin.com/in/norberto-omar-rodriguez-b8b63590"
           target="_blank"
           rel="noopener noreferrer"
+          title="LikedIn de Norberto Omar Rodriguez"
           className="hover:text-blue-700 transition-colors"
         >
           <FaLinkedin />
@@ -87,6 +88,7 @@ export const Clinics = () => {
           href="https://www.instagram.com/urologiastuconsulta"
           target="_blank"
           rel="noopener noreferrer"
+          title="Instagram de Urología Siglo XXI"
           className="hover:text-pink-600 transition-colors"
         >
           <FaInstagram />

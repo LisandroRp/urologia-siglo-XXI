@@ -32,6 +32,7 @@ export const InfoSection = ({ type, reverse = false }: InfoSectionProps) => {
           <Description text={slug.description} highlights={slug.highlights} />
           {slug.button ?
             <a
+              title={slug.subtitle}
               href={slug.button.onClick}
               className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition w-fit"
             >

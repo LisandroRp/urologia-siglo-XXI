@@ -9,12 +9,10 @@ export function App({ Component, pageProps, }: AppProps) {
     <>
       <Header />
       <Head>
-        <title>Urología Siglo XXI | Clínica de Urología en Buenos Aires</title>
+        <title>Urología Siglo XXI | Dr. Norberto Omar Rodríguez - Canning y Cañuelas</title>
         <link rel="canonical" href={siteUrl} />
-        <meta
-          name="description"
-          content="Urología Siglo XXI en Buenos Aires. Atención especializada del Dr. Norberto Omar Rodríguez con tecnología de última generación, diagnóstico preciso y tratamientos innovadores para tu salud."
-        />
+        <meta name="description" content="Urología Siglo XXI en Canning y Cañuelas con el Dr. Norberto Omar Rodríguez. Consultas, diagnóstico preciso y tratamientos de última generación en urología." />
+
         {/* favicon */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
@@ -26,6 +24,7 @@ export function App({ Component, pageProps, }: AppProps) {
         <meta property="og:description" content="Tecnología de vanguardia y más de 30 años de experiencia en diagnóstico y tratamiento integral de patologías urológicas." />
         <meta property="og:image" content={`${siteUrl}/green1.jpg`} />
         <meta property="og:url" content={siteUrl} />
+        <meta property="og:locale" content={"es-AR"} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

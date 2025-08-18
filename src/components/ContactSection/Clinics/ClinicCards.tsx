@@ -28,6 +28,7 @@ export const ClinicCards = ({ clinic, onClick }: ClinicCardsProps) => {
         href={buildWhatsAppLink(number)}
         target="_blank"
         rel="noopener noreferrer"
+        title={`Enviar un Whats App a ${name}`}
         className="inline-flex items-center gap-2 text-green-600 hover:underline"
       >
         <FaWhatsapp size={22} /> {number}

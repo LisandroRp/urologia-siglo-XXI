@@ -6,11 +6,12 @@ interface HeaderItemProps {
   text?: string;
   href: string | null;
   exact?: boolean;
+  title?: string;
   onClick?: () => void;
-  dropDownLinks?: { id: number, text: string, href: string }[];
+  dropDownLinks?: { id: number, text: string, href: string, title: string }[];
 }
 
-export function HeaderItem({ text, href, onClick, dropDownLinks }: HeaderItemProps) {
+export function HeaderItem({ title, text, href, onClick, dropDownLinks }: HeaderItemProps) {
   const { push } = useRouter();
   const [isOpen, setIsOpen] = useState(false)
   const isDropdown = dropDownLinks && dropDownLinks.length
@@ -74,7 +75,16 @@ export function HeaderItem({ text, href, onClick, dropDownLinks }: HeaderItemPro
         <div className="xl:absolute left-0 z-10 xl:mt-2 w-72 origin-top-right rounded-md bg-white xl:shadow-lg xl:ring-1 xl:ring-black xl:ring-opacity-5 focus:outline-none py-[13px]" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
           <div className="py-1" role="none">
             {dropDownLinks.map((dropLink) => (
-              <a href={dropLink.href} target="_blank" className="block px-4 py-2 text-sm text-gray-700 no-underline	hover:text-[#FF00D6] hover:bg-[#f8f9fa]" role="menuitem" id={dropLink.id.toString()}>{dropLink.text}</a>
+              <a
+                href={dropLink.href}
+                target="_blank"
+                role="menuitem"
+                id={dropLink.id.toString()}
+                title={`${dropLink}`}
+                className="block px-4 py-2 text-sm text-gray-700 no-underline	hover:text-[#FF00D6] hover:bg-[#f8f9fa]"
+              >
+                {dropLink.text}
+              </a>
             ))}
           </div>
         </div> : ""}

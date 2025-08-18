@@ -13,7 +13,7 @@ export function App({ Component, pageProps, }: AppProps) {
         <link rel="canonical" href={siteUrl} />
         <meta
           name="description"
-          content="Urología Siglo XXI en Buenos Aires. Atención especializada del Dr. Norberto Omar Rodríguez con tecnología de última generación."
+          content="Urología Siglo XXI en Buenos Aires. Atención especializada del Dr. Norberto Omar Rodríguez con tecnología de última generación, diagnóstico preciso y tratamientos innovadores para tu salud."
         />
         {/* favicon */}
         <link rel="icon" href="/favicon.ico" />

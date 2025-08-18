@@ -19,23 +19,23 @@ export const Cover = () => {
       {/* Texto centrado */}
       <div className="absolute flex flex-col inset-0 items-center justify-center z-20 text-center gap-5 text-blue-50">
         <div className="flex-col sm:flex-row ">
-          {width && width >= breakpoints.sm
-            ?
-            <h1 className={`animate-typing ${titleClassNames}`}>
-              UROLOGÍA SIGLO XXI
-            </h1>
-            :
-            <>
-              <h1 className={titleClassNames}>
+          <h1 className={titleClassNames}>
+            {width && width >= breakpoints.sm
+              ?
+              <p className={`animate-typing`}>
+                UROLOGÍA SIGLO XXI
+              </p>
+              :
+              <>
                 <p className={`animate-typing-mobile`}>
                   UROLOGÍA
                 </p>
                 <p className={`animate-typing-mobile-delay`}>
                   SIGLO XXI
                 </p>
-              </h1>
-            </>
-          }
+              </>
+            }
+          </h1>
         </div>
         <h2 className="fade-in fade-in-800 motion-reduce:transition-none motion-reduce:opacity-100 text-2xl md:text-2xl px-12 sm:px-40">Tecnología de vanguardia y más de 30 años de experiencia para el diagnóstico y tratamiento integral de las patologías urológicas</h2>
       </div>

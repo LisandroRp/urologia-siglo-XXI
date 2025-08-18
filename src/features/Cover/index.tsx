@@ -10,7 +10,7 @@ export const Cover = () => {
   function idsGenerator(array: string[]) {
     return array.map((item, index) => ({ id: index + 1, src: item }));
   }
-  const titleClassNames = "transition-all text-5xl md:text-6xl font-bold uppercase whitespace-nowrap overflow-hidden border-r-4 border-white"
+  const titleClassNames = "transition-all text-5xl md:text-6xl font-bold uppercase whitespace-nowrap overflow-hidden"
   return (
     <div className="h-[calc(100vh-65px)] mt-[65px] overflow-hidden bg-blue-50">
       <ImagesCarousel images={idsGenerator([...photos, ...photos])} />
@@ -26,11 +26,13 @@ export const Cover = () => {
             </h1>
             :
             <>
-              <h1 className={`animate-typing-mobile ${titleClassNames}`}>
-                UROLOGÍA
-              </h1>
-              <h1 className={`animate-typing-mobile-delay ${titleClassNames}`}>
-                SIGLO XXI
+              <h1 className={titleClassNames}>
+                <p className={`animate-typing-mobile`}>
+                  UROLOGÍA
+                </p>
+                <p className={`animate-typing-mobile-delay`}>
+                  SIGLO XXI
+                </p>
               </h1>
             </>
           }

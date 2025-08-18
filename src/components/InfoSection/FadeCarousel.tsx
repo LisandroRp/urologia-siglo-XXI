@@ -43,7 +43,7 @@ export default function FadeImageCarousel({
   const arrowsClassNames = "bg-white w-8 h-8 rounded-full cursor-pointer shadow-md hover:opacity-50"
   return (
     <div
-      className={`h-full relative overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
+      className={`h-full rounded-3xl relative overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -59,7 +59,7 @@ export default function FadeImageCarousel({
               src={src}
               alt={imgAlt}
               // fill
-              className="object-cover rounded-3xl"
+              className="object-cover rounded-3xl absolute inset-0 w-full h-full"
               // priority={i === 0}
               sizes="100vw"
             />

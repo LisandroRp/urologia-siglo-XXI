@@ -4,11 +4,12 @@ import { ImagesCarousel } from "@/components/_index";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { breakpoints } from "@/core/helpers/responsiveBreakpoints";
 
+export type tCarouselImages = { src: string, direction: "top" | "center" }
 export const Cover = () => {
   const { width } = useWindowSize();
-  const photos = [images.green1, images.rezum, images.toscas2, images.toscas3]
-  function idsGenerator(array: string[]) {
-    return array.map((item, index) => ({ id: index + 1, src: item }));
+  const photos: tCarouselImages[] = [{ src: images.green1, direction: "top" }, { src: images.rezum, direction: "top" }, { src: images.toscas2, direction: "center" }, { src: images.toscas3, direction: "center" }]
+  function idsGenerator(array: tCarouselImages[]) {
+    return array.map((item, index) => ({ id: index + 1, src: item.src, direction: item.direction }));
   }
   const titleClassNames = "transition-all text-5xl md:text-6xl font-bold uppercase whitespace-nowrap overflow-hidden"
   return (

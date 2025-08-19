@@ -1,22 +1,14 @@
-import { useWindowSize } from "@hooks";
 import classNames from "classnames";
-import Image from "next/image";
+import { useWindowSize } from "@hooks";
+import { tCarouselImages } from "@/features/Cover";
 
 interface ImagesCarouselProps {
-  images: {
-    id: number;
-    src: string;
-  }[]
+  images: ({ id: number } & tCarouselImages)[]
 }
 
 export const ImagesCarousel = ({ images }: ImagesCarouselProps) => {
   const { responsive } = useWindowSize();
   const totalImages = images.length * 2;
-
-  const imageClassName = classNames({
-    "h-full object-cover w-full": true,
-    "w-full": !responsive.lg,
-  });
 
   return (
     <div className="relative w-full h-full overflow-hidden">
@@ -34,7 +26,11 @@ export const ImagesCarousel = ({ images }: ImagesCarouselProps) => {
               <img
                 alt="banner"
                 src={image.src}
-                className={imageClassName}
+                className={classNames({
+                  "object-top": image.direction == "top",
+                  "h-full object-cover w-full": true,
+                  "w-full": !responsive.lg,
+                })}
               // priority={index === 0}
               />
             </div>

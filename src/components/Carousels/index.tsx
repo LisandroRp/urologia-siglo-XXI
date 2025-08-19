@@ -46,13 +46,13 @@ export const Carousel = ({ title, items, description, classNames }: CarouselProp
     }
   }, [width]);
 
-  // useEffect(() => {
-  //   if (isLargeScreen) return;
+  useEffect(() => {
+    if (isLargeScreen) return;
 
-  //   const interval = setInterval(handleNext, 2500); // 3 segundos
+    const interval = setInterval(handleNext, 2500); // 3 segundos
 
-  //   return () => clearInterval(interval);
-  // }, [index, isLargeScreen]);
+    return () => clearInterval(interval);
+  }, [index, isLargeScreen]);
 
   return (
     <div

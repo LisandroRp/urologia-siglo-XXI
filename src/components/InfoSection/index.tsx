@@ -21,7 +21,7 @@ export const InfoSection = ({ type, reverse = false }: InfoSectionProps) => {
     "flex-col lg:flex-row-reverse": !reverse
   })
   return (
-    <div className={`min-h-screen w-full flex justify-center px-4 py-16 bg-blue-50 gap-10 ${containerClassNames}`}>
+    <div className={`min-h-screen w-full flex justify-center px-4 lg:px-8 py-10 md:py-16 bg-blue-50 gap-10 ${containerClassNames}`}>
       <div className="flex flex-1 flex-col justify-center w-full lg:w-1/2">
         <h2 className="text-3xl pl-3 font-bold text-blue-700">{slug.title}</h2>
         <h3 className="text-lg pl-3 font-medium text-gray-700 mb-4">{slug.subtitle}</h3>

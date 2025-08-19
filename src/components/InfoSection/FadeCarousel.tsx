@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
@@ -44,43 +44,47 @@ export default function FadeImageCarousel({
   return (
     <div className="flex flex-1 flex-col justify-center w-full lg:w-1/2">
       <div
-        className={`h-full rounded-3xl relative overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
+        className={`h-full w-full aspect-[16/12] md:aspect-[16/9] rounded-3xl relative overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
         {/* contenedor con relación de aspecto */}
-        <div className={`relative w-full aspect-[16/9] h-full`}>
-          {list.map((src, i) => (
-            <div
-              key={`${src}${i}`}
-              className={`absolute inset-0 transition-opacity hover:shadow-md duration-700 ease-in-out ${i === idx ? "opacity-100" : "opacity-0"
-                }`}
-            >
-              <img
-                src={src}
-                alt={imgAlt}
-                // fill
-                className="object-cover rounded-3xl absolute inset-0 w-full h-full"
-                // priority={i === 0}
-                sizes="100vw"
+        {list.map((src, i) => (
+          <div
+            key={`${src}${i}`}
+            className={`absolute inset-0 transition-opacity hover:shadow-md duration-700 ease-in-out ${i === idx ? "opacity-100" : "opacity-0"
+              }`}
+          >
+            <img
+              src={src}
+              alt={imgAlt}
+              // fill
+              className={classNames(
+                "object-cover rounded-3xl absolute inset-0 w-full h-full",
+                {
+                  "object-top": list.length === 1,
+                  "object-center": list.length !== 1,
+                }
+              )}
+              // priority={i === 0}
+              sizes="100vw"
+            />
+          </div>
+        ))}
+        {/* dots */}
+        {showDots && list.length > 1 && (
+          <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+            {list.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Ir al ${i + 1}`}
+                onClick={() => goTo(i)}
+                className={`h-2.5 w-2.5 rounded-full transition ${i === idx ? "bg-zinc-900" : "bg-zinc-300 hover:bg-zinc-400"
+                  }`}
               />
-            </div>
-          ))}
-          {/* dots */}
-          {showDots && list.length > 1 && (
-            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-              {list.map((_, i) => (
-                <button
-                  key={i}
-                  aria-label={`Ir al ${i + 1}`}
-                  onClick={() => goTo(i)}
-                  className={`h-2.5 w-2.5 rounded-full transition ${i === idx ? "bg-zinc-900" : "bg-zinc-300 hover:bg-zinc-400"
-                    }`}
-                />
-              ))}
-            </div>
-          )}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
       {/* flechas */}
       {showArrows && list.length > 1 && (

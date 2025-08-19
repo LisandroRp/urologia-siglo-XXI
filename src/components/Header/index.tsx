@@ -19,7 +19,7 @@ export function Header({ fixed, modalHeader, isHidingDownloadHeader }: HeaderPro
     let lastScroll = window.scrollY;
 
     const onScroll = () => {
-      const currentScroll = window.scrollY;
+      const currentScroll = Math.max(0, window.scrollY); // nunca < 0
       const header = document.getElementById("header");
 
       if (!header) return;
@@ -33,7 +33,7 @@ export function Header({ fixed, modalHeader, isHidingDownloadHeader }: HeaderPro
       lastScroll = currentScroll;
     };
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

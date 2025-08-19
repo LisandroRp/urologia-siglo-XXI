@@ -2,7 +2,6 @@ import { JSX } from 'react';
 import classNames from 'classnames';
 import { useWindowSize } from '@hooks';
 import { ImagesCarousel } from './ImagesCarousel';
-import Image, { StaticImageData } from "next/image";
 
 interface ImageTextModuleProps {
   className?: string;

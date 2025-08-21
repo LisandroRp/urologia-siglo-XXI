@@ -13,10 +13,10 @@ interface CarouselProps {
 }
 
 export const Carousel = ({ title, items, description, classNames }: CarouselProps) => {
-  const { width } = useWindowSize();
-  const carouselRef = useRef<HTMLDivElement>(null);
   const maxScroll = useRef(0);
   const [index, setIndex] = useState(0);
+  const { width, responsive } = useWindowSize();
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const isLargeScreen = width && width > breakpoints.lg;
 
@@ -49,7 +49,7 @@ export const Carousel = ({ title, items, description, classNames }: CarouselProp
   useEffect(() => {
     if (isLargeScreen) return;
 
-    const interval = setInterval(handleNext, 2500); // 3 segundos
+    const interval = setInterval(handleNext, responsive.md ? 3000 : 2000);
 
     return () => clearInterval(interval);
   }, [index, isLargeScreen]);

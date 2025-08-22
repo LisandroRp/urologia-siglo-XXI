@@ -23,7 +23,6 @@ export function HeaderItem({ title, text, href, onClick, dropDownLinks }: Header
       e.stopPropagation();
       setIsOpen((prevState) => !prevState)
     }
-    console.log(href)
     if (href)
       push(href)
   }

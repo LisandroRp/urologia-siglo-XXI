@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { Header } from "@/components/Header";
 
 export function App({ Component, pageProps, }: AppProps) {
-  const siteUrl = "https://urologia-siglo-xxi.vercel.app";
+  const siteUrl = "https://www.urologiasigloxxi.com/";
   return (
     <>
       <Header />
@@ -14,9 +14,15 @@ export function App({ Component, pageProps, }: AppProps) {
         <meta name="description" content="Urología Siglo XXI en Canning y Cañuelas con el Dr. Norberto Omar Rodríguez. Consultas, diagnóstico preciso y tratamientos de última generación en urología." />
 
         {/* favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
-        {/* <link rel="manifest" href="/site.webmanifest" /> */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-x32.png" />
+        {/* apple */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-favicon.png" />
+        {/* android */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-favicon-x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-favicon-x512.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />

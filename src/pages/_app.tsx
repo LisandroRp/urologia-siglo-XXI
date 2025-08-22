@@ -38,6 +38,9 @@ export function App({ Component, pageProps, }: AppProps) {
         <meta name="twitter:description" content="Más de 30 años de experiencia en diagnóstico y tratamiento integral de patologías urológicas." />
         <meta name="twitter:image" content={`${siteUrl}/green1.jpg`} />
 
+        {/* google verification */}
+        <meta name="google-site-verification" content="3DbC4BYutAtJ61l4yee-gKNuSoJ4Hn-RChHfZN6Ayh0" />
+
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"

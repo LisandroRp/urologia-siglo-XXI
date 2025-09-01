@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://urologiasigloxxi.com/
+Host: https://www.urologiasigloxxi.com/
 
 # Sitemaps
-Sitemap: https://urologiasigloxxi.com/sitemap.xml
+Sitemap: https://www.urologiasigloxxi.com/sitemap.xml

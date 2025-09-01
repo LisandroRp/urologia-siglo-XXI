@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { Header } from "@/components/Header";
 
 export function App({ Component, pageProps, }: AppProps) {
-  const siteUrl = "https://urologiasigloxxi.com/";
+  const siteUrl = "https://www.urologiasigloxxi.com/";
   return (
     <>
       <Header />

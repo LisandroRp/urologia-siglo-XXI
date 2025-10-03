@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { ClinicCards } from "./ClinicCards";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { IoCloseSharp } from "react-icons/io5";
 import { Spinner } from "@/components/_index";
+import { IoCloseSharp } from "react-icons/io5";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export type tClinic = { id: number; name: string; shortName: string; address: string; number: string; }
 export const clinics: tClinic[] = [

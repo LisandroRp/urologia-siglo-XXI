@@ -21,6 +21,7 @@ export const clinics: tClinic[] = [
     number: "+54 9 11 3770-1199"
   }
 ]
+
 export const Clinics = () => {
   const [selectedClinic, setSelectedClinic] = useState<tClinic | null>(null)
   const [flipped, setFlipped] = useState(false);

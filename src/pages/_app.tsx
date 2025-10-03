@@ -52,6 +52,7 @@ export function App({ Component, pageProps, }: AppProps) {
                   "@type": "Organization",
                   "@id": `${siteUrl}#XXI`,
                   name: "Urología Siglo XXI - Canning y Cañuelas",
+                  alternateName: "Urología Siglo XXI",
                   url: siteUrl,
                   logo: `${siteUrl}logo.png`,
                   sameAs: [
@@ -63,6 +64,7 @@ export function App({ Component, pageProps, }: AppProps) {
                   "@id": `${siteUrl}#website`,
                   url: siteUrl,
                   name: "Urología Siglo XXI - Canning y Cañuelas",
+                  alternateName: "Urología Siglo XXI",
                   publisher: { "@id": `${siteUrl}#XXI` }
                 },
                 {

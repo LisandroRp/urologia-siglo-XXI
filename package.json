@@ -13,7 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
-    "next": "15.4.5",
+    "next": "15.4.10",
     "next-sitemap": "^4.2.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
